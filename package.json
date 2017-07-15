@@ -1,17 +1,20 @@
 {
   "name": "trip-extension",
   "version": "1.0.0",
-  "description": "scraped urls for app",
+  "description": "Pin potential trips surrounding your airbnb",
   "main": "background.js",
   "scripts": {
-    "test": "npm start"
+    "test": "dev"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/selenacardona113/trip-extension.git"
   },
   "keywords": [
-    "xray"
+    "airbnb"
+    "trip"
+    "extension"
+    "browser"
   ],
   "author": "selenacrdona",
   "license": "ISC",
