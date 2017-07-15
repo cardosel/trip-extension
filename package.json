@@ -1,0 +1,22 @@
+{
+  "name": "trip-extension",
+  "version": "1.0.0",
+  "description": "scraped urls for app",
+  "main": "background.js",
+  "scripts": {
+    "test": "npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/selenacardona113/trip-extension.git"
+  },
+  "keywords": [
+    "xray"
+  ],
+  "author": "selenacrdona",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/selenacardona113/trip-extension/issues"
+  },
+  "homepage": "https://github.com/selenacardona113/trip-extension#readme"
+}
