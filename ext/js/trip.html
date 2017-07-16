@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+     -->
+     <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+    <div id="container">
+      <h1>trip.Pin</h1><small>Pin your trips here!</small>
+      <div id="current-state">
+        <h2 id="current-trip"></h2>
+      </div>
+      <div id="controls">
+        <div class="controls-buttons-group">
+          <button type="button" id="stop">stop</button>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="scrape.js"></script>
+    <script src="trip.js"></script>
+  </body>
+</html>

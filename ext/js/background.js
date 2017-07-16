@@ -39,12 +39,44 @@ chrome.runtime.onMessage.addListener(
 	});
 
 
-// Helper Functions
+/**
+ * Helper Functions
+ */
 
 
-	// Function to add a trip and send updates to trip.html
-	function addTrip() {
-		
-	}
+/**
+ * Given the difference in seconds between the start time and current time,
+ * formats it into m:ss (ex. 0:55) and sends a message to timer.js, so it can
+ * update the UI.
+ */
+function sendUpdatedTrip() {
+	var coordinates = trip().geocode();
+	chrome.runtime.sendMessage({
+		"command": "updateLocation",
+		"location": coordinates,
+	});
+	chrome.browserAction.setBadgeText({"text" : coordinates});
+}
 
-		))
+
+/**
+ * Notifies the user when a trip is added.
+ */
+function notifyUser() {
+	var idBase = currentState.notificationBaseId;
+	var id = idBase + (new Date()).getTime();
+	chrome.notifications.create(id, currentState.opt, function() {
+		console.log(idBase + " trip created.");
+	}); // Callback function as 3rd parameter is required.
+}
+
+/**
+ * Called during a change of state during usual flow.
+ */
+function changeToNextState(isAdded) {
+	nextStateKey = currentState.nextState;
+	changeState(nextStateKey, isDelayed);
+}
+
+
+}

@@ -4,7 +4,8 @@ var googleMapsClient = require('@google/maps').createClient({
   		key: 'AIzaSyB6EM-2xMjuFuGOPE5Nj4geFFC0BrAoWwU' 
 	});
 
-fs.readFile('airbnb.json', function(err, data) {
+function geocode(){
+	fs.readFile('airbnb.json', function(err, data) {
     if(err) throw err;
 
     var airbnbs = data.toString().split("\n");
@@ -25,6 +26,9 @@ fs.readFile('airbnb.json', function(err, data) {
 			});
         }
  });
+
+};
+
 
 
 
