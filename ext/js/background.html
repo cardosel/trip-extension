@@ -1,0 +1,14 @@
+<html>
+<head>
+<script>
+chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
+    if(request.dom != "")
+        var theDOM = request.dom;
+        console.log(request.dom); // page DOM here -> works
+        chrome.extension.sendRequest({theDOM: theDOM}); // theDOM : "page DOM here"
+});
+</script>
+</head>
+<body>
+</body>
+</html>

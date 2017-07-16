@@ -3,7 +3,7 @@ const request = require('request');
 const fs = require('fs');
 
 const xray = new Xray();
-const URL = 'https://www.airbnb.com/rooms/3489531?';
+const URL = 'https://www.airbnb.com/rooms/157129?location=Tokyo%2C%20Japan&s=kiK-xDDx';
 
 	xray(URL, 'title')(function(err, title){
  		
@@ -18,9 +18,5 @@ const URL = 'https://www.airbnb.com/rooms/3489531?';
 
 	
 	});
-
-
-
-
 
 
