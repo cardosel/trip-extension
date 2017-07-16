@@ -1,4 +1,3 @@
-
 var addr;
 var fs = require('fs');
 var googleMapsClient = require('@google/maps').createClient({
@@ -12,13 +11,13 @@ fs.readFile('airbnb.json', function(err, data) {
      for(i in airbnbs) {
 
     	addr = airbnbs[i];
-		console.log(addr); // check if locations are in array
+		console.log(addr); // check if addresses are in array
 
 			    	
 			googleMapsClient.geocode({  
 			  address: addr
 			}, function(err, response) {
-			  	if (!err) { // return coordinates if no error 
+			  	if (!err) { // return coordinates if there is no error 
 	
 		  		console.log(response.json.results[0].geometry.location);
 
