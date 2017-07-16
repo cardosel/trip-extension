@@ -3,13 +3,20 @@ const request = require('request');
 const fs = require('fs');
 
 const xray = new Xray();
-const URL = 'https://www.airbnb.com/rooms/798483';
+const URL = 'https://www.airbnb.com/rooms/157129?location=Tokyo%2C%20Japan&s=kiK-xDDx';
 
 	xray(URL, 'title')(function(err, title){
  		
- 		console.log(title) // returns title of airbnb
+ 		substr = title.substring(title.indexOf('Rent')); 
+ 		places = substr.substring(8);
 
- 		fs.appendFile('airbnb.json', '\n' + title); // updates json
+ 		console.log(places) // returns places of airbnb
+
+ 		fs.appendFile('airbnb.json', '\n' + places); // updates json
+
+
 
 	
 	});
+
+
